@@ -5,12 +5,12 @@ Welcome to the WeatherApp repository! This project allows you to fetch weather d
 First, clone this repository to your local machine using the following command:
 
 bash
-git clone <repository-url>
+- git clone <repository-url>
 Install Dependencies
 To install the necessary dependencies for running the WeatherApp, navigate to the project directory and execute the following command:
 
 
-pip install -r requirements.txt
+- pip install -r requirements.txt
 Change Directory
 Change the current directory to the 'weather' folder by running the following command:
 
@@ -20,13 +20,13 @@ Run the Server
 # To start the server and run the WeatherApp on your local machine, execute the following command:
 
 
-python manage.py runserver
-This command will launch the development server, and you will be able to access the WeatherApp by opening a web browser and navigating to http://localhost:8000/.
+- python manage.py runserver
+This command will launch the development server, and you will be able to access the WeatherApp by opening a web browser and navigating to - http://localhost:8000/.
 
 Usage
 Once the server is up and running, you can interact with the WeatherApp through the web interface. The application allows you to enter a location and retrieve the current weather information for that location.
 
-Contributing
+# Contributing
 If you'd like to contribute to the WeatherApp project, please follow these steps:
 
 Fork the repository on GitHub.
