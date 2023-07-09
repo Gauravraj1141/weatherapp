@@ -16,7 +16,7 @@ def delete_weather_data():
         add_minute_dt = datetime.strptime(str(created_at), "%H:%M:%S.%f")
 
         # Add 20 minutes
-        created_minute_dt = add_minute_dt + timedelta(minutes=1)
+        created_minute_dt = add_minute_dt + timedelta(minutes=20)
         after_20_min = created_minute_dt.time()
 
         # present time 
