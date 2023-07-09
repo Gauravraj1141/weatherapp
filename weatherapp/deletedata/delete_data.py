@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 
 def delete_weather_data():
     weather_data = Weather.objects.all()
+    print("delte weather data called>>>>>>")
 
     for weather_detail in weather_data:
         created_time = weather_detail.created_at
@@ -14,9 +15,9 @@ def delete_weather_data():
         # Convert to datetime object
         add_minute_dt = datetime.strptime(str(created_at), "%H:%M:%S.%f")
 
-        # Add 10 minutes
-        created_minute_dt = add_minute_dt + timedelta(minutes=10)
-        created_minute_add = created_minute_dt.time()
+        # Add 20 minutes
+        created_minute_dt = add_minute_dt + timedelta(minutes=1)
+        after_20_min = created_minute_dt.time()
 
         # present time 
         present_dt = datetime.fromisoformat(str(datetime.now()))
@@ -24,7 +25,7 @@ def delete_weather_data():
         # Extract the time
         present_time = present_dt.strftime('%H:%M:%S.%f')
 
-        if str(present_time) > str(created_minute_add):
+        if str(present_time) > str(after_20_min):
             try:
                 weather_detail = Weather.objects.get(id=weather_detail.id)
                 weather_detail.delete()
@@ -33,10 +34,10 @@ def delete_weather_data():
   
 
 
-def start():
-    scheduler = BackgroundScheduler()
-    scheduler.add_job(delete_weather_data , 'interval',seconds = 2)
-    scheduler.start()
+# def start():
+#     scheduler = BackgroundScheduler()
+#     scheduler.add_job(delete_weather_data , 'interval',seconds =2)
+#     scheduler.start()
 
 
 
